@@ -1,11 +1,13 @@
 package com.anthropicandroid.quickstart;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import com.anthropicandroid.quickstart.modules.AppModule;
 import com.anthropicandroid.quickstart.modules.ApplicationComponent;
 import com.anthropicandroid.quickstart.modules.DaggerApplicationComponent;
 import com.anthropicandroid.quickstart.modules.DaggerQuickStartAdapterComponent;
+import com.anthropicandroid.quickstart.modules.FirstObservableModule;
 import com.anthropicandroid.quickstart.modules.QuickStartAdapterComponent;
 import com.anthropicandroid.quickstart.modules.ThreadingModule;
 import com.anthropicandroid.quickstart.modules.UserActionHandlersModule;
@@ -24,8 +26,19 @@ public class QuickStartApplication extends Application {
         applicationComponent = DaggerApplicationComponent.builder()
                 .appModule(new AppModule(this))
                 .threadingModule(getThreadingModule()) //  getting for overriding with mocks in testing
-                .userActionHandlersModule(new UserActionHandlersModule())
+                .firstObservableModule(getFirstObservableModule())
+                .userActionHandlersModule(getUserActionHandlersModule())
                 .build();
+    }
+
+    @NonNull
+    public FirstObservableModule getFirstObservableModule() {
+        return new FirstObservableModule();
+    }
+
+    @NonNull
+    UserActionHandlersModule getUserActionHandlersModule() {
+        return new UserActionHandlersModule();
     }
 
     public QuickStartAdapterComponent createQuickStartAdapterComponent() {

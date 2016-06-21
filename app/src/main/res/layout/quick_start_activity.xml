@@ -56,7 +56,8 @@
                 android:text="Map"
                 android:drawableTop="@android:drawable/ic_dialog_map"
                 android:onClick="@{user_action_handlers::showMap}"
-                style="?android:attr/borderlessButtonStyle"/>
+                style="?android:attr/borderlessButtonStyle"
+                android:drawableTint="#891d1d" />
         </LinearLayout>
      </FrameLayout>
 </layout>

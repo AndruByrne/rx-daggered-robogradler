@@ -10,13 +10,19 @@ import com.anthropicandroid.quickstart.databinding.QuickStartActivityBinding;
 import com.anthropicandroid.quickstart.modules.QuickStartAdapterComponent;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+
+import rx.Observable;
 
 final public class QuickStartActivity extends Activity {
 
     public static final String TAG = QuickStartActivity.class.getSimpleName();
     @Inject
     public UserActionHandlers userActionHandlers;
-    //  need an onbackpressed handler
+
+    @Inject
+    @Named("firstObs")
+    public Observable<Integer> firstObs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,10 @@ final public class QuickStartActivity extends Activity {
 
         // assign user action handlers
         quickStartActivityBinding.setUserActionHandlers(userActionHandlers);
+    }
+
+    Observable<Integer> getFirstObs(){
+        return firstObs;
     }
 
     @Override
