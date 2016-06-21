@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="shadows-play-services-3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/shadows-play-services/3.0/ac6b658b016e29c41d962a991319f157cac36f92/shadows-play-services-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/shadows-play-services/3.0/54b30e1913e64e8a9309bf8674c9095a1b61921c/shadows-play-services-3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

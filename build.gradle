@@ -1,0 +1,21 @@
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+        // dagger visualization plugin
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects{
+    repositories {
+        jcenter()
+        maven { url 'https://oss.jfrog.org/libs-snapshot' }
+        maven { url "https://jitpack.io" }
+    }
+}

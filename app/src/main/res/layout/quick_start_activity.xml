@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user_action_handlers"
+            type="com.anthropicandroid.quickstart.activity.UserActionHandlers" />
+
+    </data>
+
+
+    <FrameLayout
+        android:id="@+id/quick_start_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/quick_start_content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top">
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_nav_bar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="72dp">
+            <Button
+                android:id="@+id/stats_nav_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Stats"
+                android:drawableTop="@android:drawable/ic_menu_search"
+                android:onClick="@{user_action_handlers::showStats}"
+                style="?android:attr/borderlessButtonStyle"/>
+            <Button
+                android:id="@+id/inventory_nav_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Inventory"
+                android:drawableTop="@android:drawable/ic_input_add"
+                android:onClick="@{user_action_handlers::showInventory}"
+                style="?android:attr/borderlessButtonStyle"/>
+            <Button
+                android:id="@+id/map_nav_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Map"
+                android:drawableTop="@android:drawable/ic_dialog_map"
+                android:onClick="@{user_action_handlers::showMap}"
+                style="?android:attr/borderlessButtonStyle"/>
+        </LinearLayout>
+     </FrameLayout>
+</layout>
